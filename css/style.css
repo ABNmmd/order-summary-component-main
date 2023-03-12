@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+:root{
+    --Pale-blue: hsl(225, 100%, 94%);
+    --Bright-blue: hsl(245, 75%, 52%);
+    --Very-pale-blue: hsl(225, 100%, 98%);
+    --Desaturated-blue: hsl(224, 23%, 55%);
+    --Dark-blue: hsl(223, 47%, 23%);
+    --Font-size-p: 16px;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.trans{
+    transition: all 0.15s 0.1s linear;
+}
+
+body .container{
+    min-height: 100vh;
+    width: 100%;
+    background: url(/images/pattern-background-desktop.svg), var(--Pale-blue);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.container .main{
+    width: 24rem;
+    border-radius: 15px;
+    font-family: 'Red Hat Display', sans-serif;
+    background-color: #fff;
+    text-align: center;
+    margin: 3rem 0;
+    transition: all 5s;
+}
+
+.container .main > img{
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+    margin-bottom: 1.5rem;
+}
+
+.container .main .title-main{
+    color: var(--Dark-blue);
+    font-weight: 900;
+}
+
+.container .main .text{
+    color: var(--Desaturated-blue);
+    font-size: var(--Font-size-p);
+    padding: 1rem 2rem;
+}
+
+.container .main .plan{
+    background-color: var(--Very-pale-blue);
+    display: grid;
+    padding: 1.5rem;
+    margin: 0.5rem 2rem;
+    border-radius: 10px;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "img title btn" "img price btn";
+}
+
+.main .plan > img{
+    grid-area: img;
+}
+
+.main .plan .title-plan{
+    grid-area: title;
+    font-size: 1rem;
+    justify-self: flex-start;
+    padding-left: 1rem;
+    font-weight: 900;
+    color: var(--Dark-blue);
+}
+.main .plan .price{
+    grid-area: price;
+    justify-self: flex-start;
+    padding-left: 1rem;
+    color: var(--Desaturated-blue);
+}
+
+.main .plan .btn-change{
+    grid-area: btn;
+    font-size: .9rem;
+    font-weight: 700;
+    align-self: center;
+    color: var(--Bright-blue);
+}
+.main .plan .btn-change:hover{
+    filter: opacity(0.7);
+    text-decoration: none;
+}
+
+.container .main .btn-main{
+    display: block;
+    color: #fff;
+    background-color: var(--Bright-blue);
+    text-decoration: none;
+    font-size: .8rem;
+    font-weight: 700;
+    margin: 2rem 2rem 1.5rem;
+    padding: 0.8rem 3rem;
+    border-radius: 10px;
+    box-shadow: 0px 20px 13px 0px hsl(225deg 100% 98%);
+}
+.container .main .btn-main:hover{
+    filter: opacity(0.75);
+}
+
+.container .main .btn-cancel{
+    display: block;
+    font-size: .9rem;
+    font-weight: 900;
+    color: var(--Desaturated-blue);
+    text-decoration: none;
+    margin: 0 2rem 2rem;
+}
+.container .main .btn-cancel:hover{
+    color: var(--Dark-blue);
+}
+
+
+.FEM .attribution { font-size: 16px; text-align: center; margin: 1rem 0;}
+.FEM .attribution a { color: hsl(228, 45%, 44%); }
+
+
+@media ( max-width: 435px ) {
+
+    body .container{
+        background: url(/images/pattern-background-mobile.svg), var(--Pale-blue);
+        background-repeat: no-repeat, no-repeat;
+        background-size: 100%;
+        background-position-y: -7%;
+    }
+
+    .container .main{
+        width: 21rem;
+    }
+
+}
